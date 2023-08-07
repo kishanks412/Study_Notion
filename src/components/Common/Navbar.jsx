@@ -52,6 +52,8 @@ function Navbar() {
     })()
   }, [])
   
+  const subLinksLength = subLinks ? subLinks.length : 0;
+
   // console.log("sub links", subLinks)
 
   const matchRoute = (route) => {
@@ -89,7 +91,7 @@ function Navbar() {
                         <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                         {loading ? (
                           <p className="text-center">Loading...</p>
-                        ) : subLinks.length ? (
+                        ) : subLinksLength ? (
                           <>
                             {subLinks
                               ?.filter(
@@ -104,7 +106,7 @@ function Navbar() {
                                   className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
                                   key={i}
                                 >
-                                  <p>{subLink.name}</p>
+                                  <p>{subLink?.name}</p>
                                 </Link>
                               ))}
                           </>
