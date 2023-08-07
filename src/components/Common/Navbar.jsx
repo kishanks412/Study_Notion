@@ -51,7 +51,7 @@ function Navbar() {
       setLoading(false)
     })()
   }, [])
-
+  
   // console.log("sub links", subLinks)
 
   const matchRoute = (route) => {
@@ -97,7 +97,7 @@ function Navbar() {
                               )
                               ?.map((subLink, i) => (
                                 <Link
-                                  to={`/catalog/${subLink.name
+                                  to={`/catalog/${subLink?.name
                                     .split(" ")
                                     .join("-")
                                     .toLowerCase()}`}
